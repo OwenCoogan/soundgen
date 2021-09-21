@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div id="video-container">
-    <video id="camera-stream" ref="camera-stream" width="500" controls  ></video>
+    <video id="camera-stream" ref="camera-stream" width="500" autoplay ></video>
     </div>
   </div>
   <div>
