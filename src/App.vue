@@ -1,7 +1,7 @@
 <template>
   <h1>Soundgen App</h1>
     
-    <div id='nav'>
+    <div>
       <router-link to='/home'> Home</router-link>
     </div>
     <router-view />
