@@ -1,5 +1,11 @@
 <template>
   <h1>Soundgen App</h1>
+    
+    <div id='nav'>
+      <router-link to='/home'> Home</router-link>
+    </div>
+    <router-view />
+
   <TensorflowWindow/>
   <ActivateCam/>
 </template>
