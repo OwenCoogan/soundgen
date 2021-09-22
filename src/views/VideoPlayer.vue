@@ -20,6 +20,7 @@
 <script>
    import * as tf from '@tensorflow/tfjs'
    import * as handpose from '@tensorflow-models/handpose'
+   //import * as fp from 'fingerpose'
    import MusicPlayer from '@/components/MusicPlayer'
    export default {
    data(){
@@ -37,7 +38,6 @@
      
    },
      methods: {
-
           startVideoStream(){
             if (navigator.getUserMedia) {
               navigator.getUserMedia(
@@ -55,24 +55,11 @@
           
         }
         },
-
-        async updateModel(){
-          const model = await handpose.load();
-          const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
-          if(predictions.length > 0)
-          {
-            this.$store.commit('updateData', predictions[0].boundingBox)
-          }
-          else{
-            this.handsVisible === false
-          }
-          
-        },
         async loadModel(){
           console.log(tf)
           const model = await handpose.load();
-          console.log(model)
           const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
+
           if(predictions.length > 0)
           {
             this.$store.commit('updateData', predictions[0].boundingBox)
@@ -91,7 +78,7 @@
           this.loadModel()
         };
         window.setInterval(() => {
-          this.updateModel()
+          this.loadModel()
         }, 500)
        }
 
