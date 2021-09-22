@@ -1,7 +1,7 @@
 <template>
   <div>
     <button class="btn btn-success m-5" v-on:click="createSound">Create Sound</button>
-    <button class="btn btn-success m-5" v-on:click="startSoundTrack">startSoundTrack</button>
+    <button class="btn btn-success m-5" id="start-music" v-on:click="startSoundTrack">startSoundTrack</button>
   </div>
 </template>
 
@@ -14,10 +14,8 @@ export default {
     synth.triggerAttackRelease("C4", "8n");
     },
     
-
-
-
     startSoundTrack(){
+      
       Tone.start()
       console.log("Tone Started")
     },
@@ -26,7 +24,7 @@ export default {
         // triggered every eighth note.
         console.log(time);
       }, "8n").start(0);
-      Tone.Transport.start();
+      document.querySelector("#start-music").click()
     },
 
     getUpdatedSound(){
