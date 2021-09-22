@@ -3,21 +3,15 @@
     
     <div>
       <router-link to='/home'> Home</router-link>
+      <router-link to='/videoplayer'> Videoplayer</router-link>
     </div>
     <router-view />
-
-  <TensorflowWindow/>
-  <ActivateCam/>
 </template>
 
 <script>
-import TensorflowWindow from "@/components/TensorflowWindow"
-import ActivateCam from "@/components/ActivateCam"
 export default {
   name: 'App',
   components: {
-    TensorflowWindow,
-    ActivateCam
   }
 }
 </script>

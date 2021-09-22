@@ -1,14 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../components/Home.vue'
-
+import Home from '../views/Home.vue'
+import VideoPlayer from '../views/VideoPlayer.vue'
 const routerHistory = createWebHistory()
 
 const router = createRouter({
   history: routerHistory,
   routes: [
     {
-      path: '/home',
+      path: '/',
       component: Home
+    },
+    {
+      path: '/videoplayer',
+      component: VideoPlayer
     },
    
   ]
