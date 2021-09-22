@@ -3,6 +3,7 @@
       <div id="video-container">
          <video id="camera-stream" ref="camera-stream" width="500" height="500" autoplay ></video>
       </div>
+     
    </div>
    <div>
       <button v-on:click="toggleCamera">Activate Camera</button>
@@ -12,6 +13,9 @@
 <script>
    import * as tf from '@tensorflow/tfjs'
    import * as handpose from '@tensorflow-models/handpose'
+   import {useStore} from "vuex";
+   import {computed} from 'vue';
+
    export default {
    data(){
      return {
@@ -19,7 +23,15 @@
      }
    },
    setup() {
-   
+
+      const store = useStore();
+      let tab = computed(function () {
+            return store.state.tab
+        });
+
+      return {
+            tab
+        }
      
    },
      methods: {
