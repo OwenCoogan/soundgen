@@ -59,7 +59,7 @@
           console.log(model)
           const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
           console.log(predictions)
-          this.$store.commit('updateData', predictions)
+          this.$store.commit('updateData', predictions[0].boundingBox)
         }
       },
 
