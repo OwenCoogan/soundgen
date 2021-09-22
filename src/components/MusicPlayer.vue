@@ -15,6 +15,7 @@ export default {
       "C5", "E5", "G5"
     ];
     var index=0;
+    //lorem
 
     Tone.Transport.scheduleRepeat(time => {
       repeat(time);
