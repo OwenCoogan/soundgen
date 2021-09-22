@@ -92,7 +92,7 @@
         };
         window.setInterval(() => {
           this.updateModel()
-        }, 1000)
+        }, 500)
        }
 
       },
