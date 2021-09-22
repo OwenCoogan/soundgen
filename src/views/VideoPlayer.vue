@@ -8,16 +8,22 @@
       <button v-on:click="toggleCamera">Activate Camera</button>
       <button v-on:click="deactivateCamera">Deactivate Camera</button>
    </div>
+   <MusicPlayer/>
 </template>
 <script>
    import * as tf from '@tensorflow/tfjs'
    import * as handpose from '@tensorflow-models/handpose'
+   import MusicPlayer from '@/components/MusicPlayer'
    export default {
    data(){
      return {
-       localMediaStream: []
+       localMediaStream: [],
+       
      }
    },
+   components: {
+    MusicPlayer
+  },
    setup() {
    
      
