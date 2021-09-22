@@ -18,6 +18,7 @@
        localMediaStream: []
      }
    },
+   
    setup() {
    
      
@@ -47,6 +48,7 @@
           console.log(model)
           const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
           console.log(predictions)
+          
         }
       },
 
