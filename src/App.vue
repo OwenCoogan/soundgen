@@ -2,7 +2,7 @@
   <h1>Soundgen App</h1>
     
     <div>
-      <router-link to='/home'> Home</router-link>
+      <router-link to='/'> Home</router-link>
       <router-link to='/videoplayer'> Videoplayer</router-link>
     </div>
     <router-view />
