@@ -12,14 +12,21 @@ export default {
     const synth = new Tone.Synth().toDestination();
     synth.triggerAttackRelease("C4", "8n");
     },
-    getUpdatedSound(){
-    this.$store.subscribe((mutation, state) => {
-      console.log(mutation.payload)
-      console.log(state)
+    emitDrumloop(){
+      console.log(this.$store)
+      
+    },
 
+    getUpdatedSound(){
+    this.$store.subscribe((mutation) => {
+      console.log(mutation.payload)
       if(mutation.payload.bottomRight[0] > 500){
         alert('should emit sound')
         this.createSound()
+      }
+      else{
+        alert('should emit DrumLoop')
+        this.emitDrumloop()
       }
 
     })
