@@ -3,7 +3,6 @@
    
       <nav class="d-flex">
         <router-link to='/'  class="btn btn-primary m-3"> back Home</router-link>
-        <!--<router-link to='/videoplayer'  class="btn btn-primary m-2"> Video player</router-link>-->
       </nav>
   
       <div id="video-container">
