@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-on:click="createSound">Create Sound</button>
+    <button class="btn btn-success m-5" v-on:click="createSound">Create Sound</button>
   </div>
 </template>
 

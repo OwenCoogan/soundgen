@@ -55,6 +55,10 @@ svg {
   font: 16em/1 Arial;
 }
 
+a {
+  text-decoration: none;
+}
+
 .webcoderskull-1 {
   fill: none;
   stroke: white;
@@ -72,15 +76,15 @@ svg {
   stroke-dashoffset: 14%;
 }
 .webcoderskull-1:nth-child(3) {
-  stroke: #e7d84b;
+  stroke: #ee7752;
   stroke-dashoffset: 21%;
 }
 .webcoderskull-1:nth-child(4) {
-  stroke: #efeac5;
+  stroke: #23a6d5;
   stroke-dashoffset: 28%;
 }
 .webcoderskull-1:nth-child(5) {
-  stroke: #1b8798;
+  stroke: #23d5ab;
   stroke-dashoffset: 35%;
 }
 
