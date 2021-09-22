@@ -1,5 +1,9 @@
 <template>
    <div class="hello">
+   
+      <router-link to='/'> Home</router-link>
+      <router-link to='/videoplayer'> Videoplayer</router-link>
+  
       <div id="video-container">
          <video id="camera-stream" ref="camera-stream" width="500" height="500" autoplay ></video>
       </div>
