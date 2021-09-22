@@ -68,7 +68,7 @@ a {
           animation: stroke-offset 7s infinite linear;
 }
 .webcoderskull-1:nth-child(1) {
-  stroke: #360745;
+  stroke: #090979;
   stroke-dashoffset: 7%;
 }
 .webcoderskull-1:nth-child(2) {

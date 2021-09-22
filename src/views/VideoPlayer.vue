@@ -80,7 +80,7 @@
 .block {
   border : 1px solid black;
   text-align: center;
-   background: linear-gradient(-45deg, #000000, #ee7752, #e73c7e, #23a6d5);
+   background: linear-gradient(-45deg, #ee7752, #090979, #e73c7e, #23a6d5);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite
 }
@@ -91,7 +91,7 @@
         background-position: 0% 50%;
     }
     50% {
-        background-position: 100% 50%;
+        background-position: 80% 50%;
     }
     100% {
         background-position: 0% 50%;}}
