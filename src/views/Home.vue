@@ -1,10 +1,11 @@
 <template>
   <div class="anim">
-        <h5 class="card-title">Bienvenue </h5>
         <svg viewBox="0 0 1800 600">
         <symbol id="s-text">
+          <router-link to='/videoplayer'>
           <text text-anchor="middle" x="50%" y="35%" class="webcoderskull"> Welcome  </text>
           <text text-anchor="middle" x="50%" y="68%" class="text--line"> Sound Gen  </text>
+          </router-link>
          </symbol>
   
             <g class="g-ants">

@@ -10,9 +10,21 @@ export default createStore({
       {
         id: 2,
         name: "lorem2",
-      },]
+      },],
+      predictions:[
+        null
+      ]
     },
-    mutations: {},
-    actions: {},
+    mutations: {
+      updateData (state,payload) {
+        state.predictions = payload
+        console.log(state.predictions)
+      }
+    },
+    actions: {
+      updateData (payload) {
+        payload.commit('updateData')
+      }
+    },
     modules: {},
 });
