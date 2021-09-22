@@ -1,13 +1,15 @@
 <template>
-   <div class="hello">
-      <div id="video-container">
+  <div>
+     <div class="hello">
+       <div id="video-container">
          <video id="camera-stream" ref="camera-stream" width="500" height="500" autoplay ></video>
-      </div>
-   </div>
-   <div>
-      <button v-on:click="toggleCamera">Activate Camera</button>
-      <button v-on:click="deactivateCamera">Deactivate Camera</button>
-   </div>
+       </div>
+     </div>
+     <div>
+       <button v-on:click="toggleCamera">Activate Camera</button>
+       <button v-on:click="deactivateCamera">Deactivate Camera</button>
+     </div>
+  </div>
 </template>
 <script>
    import * as tf from '@tensorflow/tfjs'
