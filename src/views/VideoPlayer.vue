@@ -19,8 +19,6 @@
    import * as tf from '@tensorflow/tfjs'
    import * as handpose from '@tensorflow-models/handpose'
    import MusicPlayer from '@/components/MusicPlayer'
-   import {useStore} from "vuex";
-   import {computed} from 'vue';
    export default {
    data(){
      return {
@@ -32,15 +30,6 @@
     MusicPlayer
   },
    setup() {
-
-      const store = useStore();
-      let tab = computed(function () {
-            return store.state.tab
-        });
-
-      return {
-            tab
-        }
      
    },
      methods: {
@@ -68,6 +57,7 @@
           console.log(model)
           const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
           console.log(predictions)
+          this.$store.commit('updateData', predictions)
         }
       },
 
