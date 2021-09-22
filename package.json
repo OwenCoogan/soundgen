@@ -13,8 +13,11 @@
     "@tensorflow/tfjs": "^3.9.0",
     "@tensorflow/tfjs-converter": "^3.9.0",
     "@tensorflow/tfjs-core": "^3.9.0",
+    "@popperjs/core": "^2.10.1",
+    "bootstrap": "^5.1.1",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
+    "vue-router": "^4.0.11",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
