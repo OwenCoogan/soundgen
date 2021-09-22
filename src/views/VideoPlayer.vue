@@ -53,6 +53,12 @@
           
         }
         },
+
+        async updateModel(){
+          const model = await handpose.load();
+          const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
+          this.$store.commit('updateData', predictions[0].boundingBox)
+        },
         async loadModel(){
           console.log(tf)
           const model = await handpose.load();
@@ -69,6 +75,9 @@
         video.onloadedmetadata = () => {
           this.loadModel()
         };
+        window.setInterval(() => {
+          this.updateModel()
+        }, 1000)
 
       },
    }

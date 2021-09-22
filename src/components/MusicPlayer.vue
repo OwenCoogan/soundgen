@@ -9,35 +9,39 @@
 import * as Tone from 'tone'
 export default {
   methods: {
-    createSound(){
+    createC4(){
     const synth = new Tone.Synth().toDestination();
     synth.triggerAttackRelease("C4", "8n");
     },
+    createB4(){
+    const synth = new Tone.Synth().toDestination();
+    synth.triggerAttackRelease("B4", "8n");
+    },
+    createA4(){
+    const synth = new Tone.Synth().toDestination();
+    synth.triggerAttackRelease("A4", "8n");
+    },
+    createD4(){
+    const synth = new Tone.Synth().toDestination();
+    synth.triggerAttackRelease("D4", "8n");
+    },
     
     startSoundTrack(){
-      
       Tone.start()
-      console.log("Tone Started")
     },
     emitDrumloop(){
-      new Tone.Loop((time) => {
-        // triggered every eighth note.
-        console.log(time);
-      }, "8n").start(0);
       document.querySelector("#start-music").click()
     },
 
     getUpdatedSound(){
     this.$store.subscribe((mutation) => {
-      console.log(mutation.payload)
       if(mutation.payload.bottomRight[0] > 500){
-
-        alert('this should emit sound')
-        this.createSound()
+        this.createC4()
+      }
+      if(mutation.payload.bottomRight[0] < 500){
+        this.createB4()
       }
       else{
-
-        alert('this should emit drumloop')
         this.emitDrumloop()
       }
 
