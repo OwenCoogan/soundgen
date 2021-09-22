@@ -1,6 +1,7 @@
 <template>
   <div>
     <button v-on:click="createSound">Create Sound</button>
+    <button v-on:click="startSoundTrack">startSoundTrack</button>
   </div>
 </template>
 
@@ -12,23 +13,20 @@ export default {
     const synth = new Tone.Synth().toDestination();
     synth.triggerAttackRelease("C4", "8n");
     },
-    emitDrumloop(){
-      console.log(this.$store)
-      const synthesizer = new Tone.Synth().toDestination();
-      const notes = [
-      "C4", "E4", "G4",
-      "C5", "E5", "G5"
-      ];
-      var index=0;
-      Tone.Transport.scheduleRepeat(time => {
-        repeat(time);
-      }, "8n");
     
-      function repeat(time){
-      let note = notes[index % notes.length];
-      synthesizer.triggerAttackRelease(note, "8n", time);
-      index++;
-      }
+
+
+
+    startSoundTrack(){
+      Tone.start()
+      console.log("Tone Started")
+    },
+    emitDrumloop(){
+      new Tone.Loop((time) => {
+        // triggered every eighth note.
+        console.log(time);
+      }, "8n").start(0);
+      Tone.Transport.start();
     },
 
     getUpdatedSound(){
