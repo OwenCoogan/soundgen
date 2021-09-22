@@ -1,8 +1,8 @@
 <template>
    <div class="block h-100 m-auto">
    
-      <nav class="d-flex justify-content-around">
-        <router-link to='/'  class="btn btn-primary m-2"> Home</router-link>
+      <nav class="d-flex">
+        <router-link to='/'  class="btn btn-primary m-3"> back Home</router-link>
         <!--<router-link to='/videoplayer'  class="btn btn-primary m-2"> Video player</router-link>-->
       </nav>
   

@@ -21,10 +21,6 @@
                 class="webcoderskull-1"></use>     
             </g>
         </svg>
-        <button class="btn btn-primary">cliquez pour commencer </button>
-        
-
-
   </div>
 </template>
 
