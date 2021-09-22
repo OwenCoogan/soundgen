@@ -50,7 +50,11 @@
         async loadModel(){
           console.log(tf)
           const model = await handpose.load();
-          console.log(model)
+          const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
+          console.log(predictions)
+        },
+        async triggerPrediction(){
+          const model = await handpose.load();
           const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
           console.log(predictions)
         }
@@ -60,7 +64,9 @@
        this.startVideoStream()
        var video = document.querySelector("#camera-stream");
         video.onloadedmetadata = () => {
-          this.loadModel()
+          this.loadModel().then(() => {
+            this.triggerPrediction()
+          });
         };
 
       },
