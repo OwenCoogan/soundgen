@@ -6,7 +6,7 @@
       </nav>
   
       <div id="video-container">
-        
+          
          <video id="camera-stream" ref="camera-stream" width="500" height="500"  class="shadow-lg p-3 mb-5 bg-light rounded " autoplay ></video>
       </div>
       <div>
@@ -25,6 +25,8 @@
    data(){
      return {
        localMediaStream: [],
+       videoToggled:true,
+       handsVisible:false,
        
      }
    },
@@ -57,27 +59,41 @@
         async updateModel(){
           const model = await handpose.load();
           const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
-          this.$store.commit('updateData', predictions[0].boundingBox)
+          if(predictions.length > 0)
+          {
+            this.$store.commit('updateData', predictions[0].boundingBox)
+          }
+          else{
+            this.handsVisible === false
+          }
+          
         },
         async loadModel(){
           console.log(tf)
           const model = await handpose.load();
           console.log(model)
           const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
-          console.log(predictions)
-          this.$store.commit('updateData', predictions[0].boundingBox)
+          if(predictions.length > 0)
+          {
+            this.$store.commit('updateData', predictions[0].boundingBox)
+          }
+          else{
+            this.handsVisible === false
+          }
         }
       },
 
      mounted () {
-       this.startVideoStream()
-       var video = document.querySelector("#camera-stream");
+       if(this.videoToggled === true){
+        this.startVideoStream()
+        var video = document.querySelector("#camera-stream");
         video.onloadedmetadata = () => {
           this.loadModel()
         };
         window.setInterval(() => {
           this.updateModel()
         }, 1000)
+       }
 
       },
    }

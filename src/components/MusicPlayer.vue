@@ -26,9 +26,6 @@ export default {
     synth.triggerAttackRelease("D4", "8n");
     },
     
-    startSoundTrack(){
-      Tone.start()
-    },
     emitDrumloop(){
       document.querySelector("#start-music").click()
     },
