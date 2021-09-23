@@ -37,7 +37,7 @@ export default {
     document.querySelector('.startTone')?.addEventListener('click', async () => {
     await Tone.start()
     Tone.Transport.start()
-    const player = new Tone.Player("https://tonejs.github.io/audio/berklee/gong_1.mp3").toDestination();
+    const player = new Tone.Player("https://tonejs.github.io/audio/casio/A1.mp3").toDestination();
         const loop = new Tone.Loop(() => {
         player.start();
     }, "8n").start(0);
