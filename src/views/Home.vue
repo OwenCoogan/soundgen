@@ -25,13 +25,15 @@
 </template>
 
 <script>
+import * as Tone from 'tone'
 export default {
   name: 'Home',
   props: {
   
   },
   methods:{
-    startSoundTrack(){
+    async startSoundTrack(){
+      await Tone.start()
 
     },
   }
