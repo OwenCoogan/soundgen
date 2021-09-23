@@ -55,7 +55,7 @@
           
         }
         },
-        async loadModel(  ){
+        async loadModel( ){
           console.log(tf)
           const model = await handpose.load();
           const predictions = await model.estimateHands(document.querySelector("#camera-stream"));

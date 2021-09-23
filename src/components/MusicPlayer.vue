@@ -38,7 +38,7 @@ export default {
         this.createSynth("C4")
       }
       if(mutation.payload.bottomRight[0] < innerWidthVideoWindow) {
-        this.createSynth("B4")
+        this. createSynth("B4")
       }
       else{
         this.emitDrumloop()
