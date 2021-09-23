@@ -6,7 +6,7 @@ export function createSynth(note){
 }
 
 export function emitDrumloop(){
-    const player = new Tone.Player("@/sounds/drumloop.mp3").toDestination();
+    const player = new Tone.Player("@/assets/sounds/drumloop.mp3").toDestination();
     player.loop = true
 }
 

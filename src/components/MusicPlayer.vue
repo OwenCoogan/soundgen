@@ -18,18 +18,23 @@ export default {
     this.$store.subscribe((mutation) => {
 
 
-      if(mutation.payload.bottomRight[0] > innerWidthVideoWindow && mutation.payload.bottomRight[0] < innerWidthVideoWindow*2 ){
+      if(mutation.payload.topLeft[0] > innerWidthVideoWindow && mutation.payload.topLeft[0] < innerWidthVideoWindow*2 ){
         createSynth("C4")
       }
-      else if(mutation.payload.bottomRight[0] > innerWidthVideoWindow*2 && mutation.payload.bottomRight[0] < innerWidthVideoWindow*3 ){
+      else if(mutation.payload.topLeft[0] > innerWidthVideoWindow*2 && mutation.payload.topLeft[0] < innerWidthVideoWindow*3 ){
         createSynth("B4")
       }
-      else if(mutation.payload.bottomRight[0] > innerWidthVideoWindow*3 && mutation.payload.bottomRight[0] < innerWidthVideoWindow*4){
+      else if(mutation.payload.topLeft[0] > innerWidthVideoWindow*3 && mutation.payload.topLeft[0] < innerWidthVideoWindow*4 && mutation.payload.topLeft[0] > innerWidthVideoWindow){
         createSynth("A4")
       }
+      else{
+        createSynth("E4")
+      }
+      
     })
     },
     async startTrack(){
+      console.log("tone should start")
       await Tone.start()
       emitDrumloop()
     }

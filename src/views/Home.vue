@@ -2,7 +2,7 @@
   <div class="anim">
         <svg viewBox="0 0 1800 600">
         <symbol id="s-text">
-          <router-link to='/videoplayer' v-on:click="startSoundTrack">
+          <router-link to='/videoplayer' class="startTone">
           <text text-anchor="middle" x="50%" y="35%" class="webcoderskull"> Welcome  </text>
           <text text-anchor="middle" x="50%" y="68%" class="text--line"> Sound Gen  </text>
           </router-link>
@@ -32,10 +32,17 @@ export default {
   
   },
   methods:{
-    async startSoundTrack(){
-      await Tone.start()
-
-    },
+  },
+  mounted(){
+    document.querySelector('.startTone')?.addEventListener('click', async () => {
+    await Tone.start()
+    Tone.Transport.start()
+    const player = new Tone.Player("@/assets/sounds/drumloop.mp3").toDestination();
+    Tone.loaded().then(() => {
+      player.start();
+    });
+    console.log('audio is ready')
+})
   }
 }
 </script>
