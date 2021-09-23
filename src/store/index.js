@@ -5,7 +5,8 @@ export default createStore({
       predictions:[
         null
       ],
-      gesture:null
+      gesture:null,
+      audioStarted:false,
     },
     mutations: {
       updateData (state,payload) {
@@ -14,6 +15,9 @@ export default createStore({
       },
       updateGesture (state,payload) {
         state.gesture = payload
+      },
+      audioStart(state,payload){
+        state.audioStarted = payload
       }
     },
     actions: {
@@ -22,6 +26,9 @@ export default createStore({
       },
       updateGesture (payload) {
         payload.commit('updateGesture')
+      },
+      audioStart (payload) {
+        payload.commit('audioStart')
       }
     },
     modules: {},
