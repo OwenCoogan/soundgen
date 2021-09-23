@@ -2,7 +2,7 @@
   <div class="anim">
         <svg viewBox="0 0 1800 600">
         <symbol id="s-text">
-          <router-link to='/videoplayer'>
+          <router-link to='/videoplayer' v-on:click="startSoundTrack">
           <text text-anchor="middle" x="50%" y="35%" class="webcoderskull"> Welcome  </text>
           <text text-anchor="middle" x="50%" y="68%" class="text--line"> Sound Gen  </text>
           </router-link>
@@ -29,6 +29,11 @@ export default {
   name: 'Home',
   props: {
   
+  },
+  methods:{
+    startSoundTrack(){
+
+    },
   }
 }
 </script>
