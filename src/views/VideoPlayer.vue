@@ -91,7 +91,7 @@
 .block {
   border : 1px solid black;
   text-align: center;
-   background: linear-gradient(-45deg, #ee7752, #090979, #e73c7e, #23a6d5);
+   background: linear-gradient(-45deg, #ee7752, #090979, #d61c59, #23a6d5);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite
 }
