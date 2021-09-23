@@ -34,15 +34,22 @@ export default {
     const innerHeightVideoWindow = 500/2
     console.log(innerHeightVideoWindow)
     this.$store.subscribe((mutation) => {
-      if(mutation.payload.bottomRight[0] > innerWidthVideoWindow){
+      if(mutation.payload.bottomRight[0] > innerWidthVideoWindow && mutation.payload.bottomRight[0] < innerWidthVideoWindow*2 ){
         this.createSynth("C4")
       }
-      if(mutation.payload.bottomRight[0] > innerWidthVideoWindow){
+      if(mutation.payload.bottomRight[0] > innerWidthVideoWindow*2 && mutation.payload.bottomRight[0] < innerWidthVideoWindow*3 ){
+        this.createSynth("B4")
+      }
+      if(mutation.payload.bottomRight[0] > innerWidthVideoWindow*3 && mutation.payload.bottomRight[0] < innerWidthVideoWindow*4 ){
+        this.createSynth("A4")
+      }
+      
+      /*if(mutation.payload.bottomRight[0] > innerWidthVideoWindow){
         this.createSynth("A4")
       }
       if(mutation.payload.bottomRight[0] < innerWidthVideoWindow) {
         this. createSynth("B4")
-      }
+      }*/
       else{
         this.emitDrumloop()
       }
