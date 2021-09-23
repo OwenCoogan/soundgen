@@ -6,7 +6,7 @@
       </nav>
   
       <div id="video-container">
-        
+          
          <video id="camera-stream" ref="camera-stream" width="500" height="500"  class="shadow-lg p-3 mb-5 bg-light rounded " autoplay ></video>
       </div>
       <div>
@@ -20,11 +20,14 @@
 <script>
    import * as tf from '@tensorflow/tfjs'
    import * as handpose from '@tensorflow-models/handpose'
+   //import * as fp from 'fingerpose'
    import MusicPlayer from '@/components/MusicPlayer'
    export default {
    data(){
      return {
        localMediaStream: [],
+       videoToggled:true,
+       handsVisible:false,
        
      }
    },
@@ -35,7 +38,6 @@
      
    },
      methods: {
-
           startVideoStream(){
             if (navigator.getUserMedia) {
               navigator.getUserMedia(
@@ -53,22 +55,32 @@
           
         }
         },
-        async loadModel(){
+        async loadModel( ){
           console.log(tf)
           const model = await handpose.load();
-          console.log(model)
           const predictions = await model.estimateHands(document.querySelector("#camera-stream"));
-          console.log(predictions)
-          this.$store.commit('updateData', predictions[0].boundingBox)
+
+          if(predictions.length > 0)
+          {
+            this.$store.commit('updateData', predictions[0].boundingBox)
+          }
+          else{
+            this.handsVisible === false
+          }
         }
       },
 
      mounted () {
-       this.startVideoStream()
-       var video = document.querySelector("#camera-stream");
+       if(this.videoToggled === true){
+        this.startVideoStream()
+        var video = document.querySelector("#camera-stream");
         video.onloadedmetadata = () => {
           this.loadModel()
         };
+        window.setInterval(() => {
+          this.loadModel()
+        }, 500)
+       }
 
       },
    }

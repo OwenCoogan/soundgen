@@ -9,38 +9,40 @@
 import * as Tone from 'tone'
 export default {
   methods: {
-    createSound(){
+    /*
+    createA4(){
     const synth = new Tone.Synth().toDestination();
-    synth.triggerAttackRelease("C4", "8n");
+    synth.triggerAttackRelease("A4", "8n");
     },
+    createD4(){
+    const synth = new Tone.Synth().toDestination();
+    synth.triggerAttackRelease("D4", "8n");
+    },*/
+
+    createSynth(note){
+    const synth = new Tone.Synth().toDestination();
+    synth.triggerAttackRelease(note, "8n");
+    },
+
     
-    startSoundTrack(){
-      
-      Tone.start()
-      console.log("Tone Started")
-    },
     emitDrumloop(){
-      new Tone.Loop((time) => {
-        // triggered every eighth note.
-        console.log(time);
-      }, "8n").start(0);
       document.querySelector("#start-music").click()
     },
 
     getUpdatedSound(){
+    const innerWidthVideoWindow = 600/4
+    const innerHeightVideoWindow = 500/2
+    console.log(innerHeightVideoWindow)
     this.$store.subscribe((mutation) => {
-      console.log(mutation.payload)
-      if(mutation.payload.bottomRight[0] > 500){
-
-        alert('this should emit sound')
-        this.createSound()
+      if(mutation.payload.bottomRight[0] > innerWidthVideoWindow){
+        this.createSynth("C4")
+      }
+      if(mutation.payload.bottomRight[0] < innerWidthVideoWindow) {
+        this. createSynth("B4")
       }
       else{
-
-        alert('this should emit drumloop')
         this.emitDrumloop()
       }
-
     })    
     
     }
