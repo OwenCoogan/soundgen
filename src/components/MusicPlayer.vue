@@ -37,6 +37,9 @@ export default {
       if(mutation.payload.bottomRight[0] > innerWidthVideoWindow){
         this.createSynth("C4")
       }
+      if(mutation.payload.bottomRight[0] > innerWidthVideoWindow){
+        this.createSynth("A4")
+      }
       if(mutation.payload.bottomRight[0] < innerWidthVideoWindow) {
         this. createSynth("B4")
       }

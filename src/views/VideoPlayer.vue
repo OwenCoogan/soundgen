@@ -79,7 +79,7 @@
         };
         window.setInterval(() => {
           this.loadModel()
-        }, 500)
+        }, 1000)
        }
 
       },
