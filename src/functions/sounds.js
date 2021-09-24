@@ -5,8 +5,8 @@ export function createSynth(note){
     synth.triggerAttackRelease(note, "8n");
 }
 
-/*export const loopedSound = new Tone.Player("https://tonejs.github.io/audio/casio/A1.mp3").toDestination();
+export const loopedSound = new Tone.Player("https://tonejs.github.io/audio/casio/A1.mp3").toDestination();
 
 export const loop = new Tone.Loop(() => {
     loopedSound.start();
-}, "16n").start(0);*/
+}, "16n").start(0);
