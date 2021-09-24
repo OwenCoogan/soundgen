@@ -1,6 +1,5 @@
 <template>
   <div>
-    <button class="btn btn-success m-5" id="start-music" v-on:click="startTrack">startSoundTrack</button>
   </div>
 </template>
 
@@ -34,7 +33,6 @@ export default {
     })
     },
     async startTrack(){
-      console.log("tone should start")
       await Tone.start()
       emitDrumloop()
     }

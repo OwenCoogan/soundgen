@@ -26,6 +26,7 @@
 
 <script>
 import * as Tone from 'tone'
+import {loop } from '../functions/sounds'
 export default {
   name: 'Home',
   props: {
@@ -37,16 +38,9 @@ export default {
     document.querySelector('.startTone')?.addEventListener('click', async () => {
     await Tone.start()
     Tone.Transport.start()
-    const player = new Tone.Player("https://tonejs.github.io/audio/casio/A1.mp3").toDestination();
-        const loop = new Tone.Loop(() => {
-        player.start();
-    }, "8n").start(0);
-    
-
     Tone.loaded().then(() => {
       loop.start();
     });
-    console.log('audio is ready')
 })
   }
 }

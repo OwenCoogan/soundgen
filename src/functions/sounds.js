@@ -10,3 +10,8 @@ export function emitDrumloop(){
     player.loop = true
 }
 
+export const player = new Tone.Player("https://tonejs.github.io/audio/casio/A1.mp3").toDestination();
+
+export const loop = new Tone.Loop(() => {
+player.start();
+}, "8n").start(0);

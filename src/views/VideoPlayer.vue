@@ -1,5 +1,5 @@
 <template>
-   <div class="block h-100 m-auto">
+   <div class="block m-auto">
    
       <nav class="d-flex">
         <router-link to='/'  class="btn btn-primary m-3"> back Home</router-link>
@@ -10,8 +10,8 @@
          <video id="camera-stream" ref="camera-stream" width="500" height="500"  class="shadow-lg p-3 mb-5 bg-light rounded " autoplay ></video>
       </div>
       <div>
-      <button class="btn btn-info  m-2" v-on:click="toggleCamera">Activate Camera</button>
-      <button class="btn btn-danger m-2" v-on:click="deactivateCamera">Deactivate Camera</button>
+      <!--<button class="btn btn-info  m-2" v-on:click="toggleCamera">Activate Camera</button>
+      <button class="btn btn-danger m-2" v-on:click="deactivateCamera">Deactivate Camera</button>-->
    </div>
    <MusicPlayer/>
    </div>
@@ -93,7 +93,8 @@
   text-align: center;
    background: linear-gradient(-45deg, #ee7752, #090979, #d61c59, #23a6d5);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite
+    animation: gradient 15s ease infinite;
+    height:100vh;
 }
 
 
