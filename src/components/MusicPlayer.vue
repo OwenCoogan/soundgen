@@ -5,7 +5,7 @@
 
 <script>
 import * as Tone from 'tone'
-import { createSynth , emitDrumloop } from '../functions/sounds';
+import { createSynth} from '../functions/sounds';
 
 export default {
   
@@ -15,7 +15,6 @@ export default {
     const innerHeightVideoWindow = 500/2
     console.log(innerHeightVideoWindow)
     this.$store.subscribe((mutation) => {
-
 
       if(mutation.payload.topLeft[0] > innerWidthVideoWindow && mutation.payload.topLeft[0] < innerWidthVideoWindow*2 ){
         createSynth("C4")
@@ -34,7 +33,6 @@ export default {
     },
     async startTrack(){
       await Tone.start()
-      emitDrumloop()
     }
     
   },

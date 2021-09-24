@@ -26,7 +26,7 @@
 
 <script>
 import * as Tone from 'tone'
-import {loop } from '../functions/sounds'
+//import {loop } from '../functions/sounds'
 export default {
   name: 'Home',
   props: {
@@ -36,11 +36,11 @@ export default {
   },
   mounted(){
     document.querySelector('.startTone')?.addEventListener('click', async () => {
-    await Tone.start()
     Tone.Transport.start()
-    Tone.loaded().then(() => {
+    await Tone.start()
+    /*Tone.loaded().then(() => {
       loop.start();
-    });
+    });*/
 })
   }
 }
